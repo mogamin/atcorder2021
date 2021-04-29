@@ -23,56 +23,16 @@ int main() {
 
       int sum = 0;
       int _i, _j;
-      _i = i-1; _j = j-1;
-      cout << _i << ":" << _j << endl;
-      if ((0<_i) && (_i<h) && (0<_j) && (_j<w)) {
-        cout << "in" << endl;
-        if (vHW.at(_i).at(_j) == '#') sum++;
-      }
-      _i = i-1; _j = j;
-      cout << _i << ":" << _j << endl;
-      if ((0<_i) && (_i<h) && (0<_j) && (_j<w)) {
-        cout << "in" << endl;
-        if (vHW.at(_i).at(_j) == '#') sum++;
-      }
-      _i = i-1; _j = j+1;
-      cout << _i << ":" << _j << endl;
-      if ((0<_i) && (_i<h) && (0<_j) && (_j<w)) {
-        cout << "in" << endl;
-        if (vHW.at(_i).at(_j) == '#') sum++;
-      }
-      _i = i; _j = j-1;
-      cout << _i << ":" << _j << endl;
-      if ((0<_i) && (_i<h) && (0<_j) && (_j<w)) {
-        cout << "in" << endl;
-        if (vHW.at(_i).at(_j) == '#') sum++;
-      }
-      _i = i; _j = j+1;
-      cout << _i << ":" << _j << endl;
-      if ((0<_i) && (_i<h) && (0<_j) && (_j<w)) {
-        cout << "in" << endl;
-        if (vHW.at(_i).at(_j) == '#') sum++;
-      }
-      _i = i+1; _j = j-1;
-      cout << _i << ":" << _j << endl;
-      if ((0<_i) && (_i<h) && (0<_j) && (_j<w)) {
-        cout << "in" << endl;
-        if (vHW.at(_i).at(_j) == '#') sum++;
-      }
-      _i = i+1; _j = j;
-      cout << _i << ":" << _j << endl;
-      if ((0<_i) && (_i<h) && (0<_j) && (_j<w)) {
-        cout << "in" << endl;
-        if (vHW.at(_i).at(_j) == '#') sum++;
-      }
-      _i = i+1; _j = j+1;
-      cout << _i << ":" << _j << endl;
-      if ((0<_i) && (_i<h) && (0<_j) && (_j<w)) {
-        cout << "in" << endl;
-        if (vHW.at(_i).at(_j) == '#') sum++;
+      for(int idelta=-1; idelta<2 ; idelta++) {
+        for(int jdelta=-1; jdelta<2 ; jdelta++) {
+          _i = i + idelta;
+          _j = j + jdelta;
+          if ((0<=_i) && (_i<h) && (0<=_j) && (_j<w)) {
+            if (vHW.at(_i).at(_j) == '#') sum++;
+          }
+        }
       }
       cout << sum;
-      
     }
     cout << endl;
   }
